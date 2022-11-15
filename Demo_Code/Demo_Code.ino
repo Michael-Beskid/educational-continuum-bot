@@ -32,7 +32,7 @@ const float R_PRIME = 0.020; // Radial distance from spine to tendons [meters]
 const float NOTCH_HEIGHT = 0.030; // Height of cutout sections [meters]
 const float DISC_HEIGHT = 0.005; // Height of discs [meters]
 const int NUM_NOTCHES = 6; // Number of notched sections
-const float SPOOL_DIAMETER = 0.0515; // Diameter of cable spools [meters]
+const float SPOOL_DIAMETER = 0.020; // Diameter of cable spools [meters]
 const float GAMMA = (2.0*PI)/3.0; // Angular distance between tendons [radians]
 
 // Dynamixel Configuration
@@ -503,21 +503,21 @@ void loop() {
   // Move robot to arbitrary poses for demonstration
   DEBUG_SERIAL.println("Position 1");
   setArcParameters(0,10,1);
-  delay(2000);
+  delay(100);
   DEBUG_SERIAL.println("Home");
-  setArcParameters(0,0,1);
-  delay(2000);
+  setArcParameters(PI/3.0,10,1);
+  delay(100);
   DEBUG_SERIAL.println("Position 2");
   setArcParameters((2.0*PI)/3.0,10,1);
-  delay(2000);
+  delay(100);
   DEBUG_SERIAL.println("Home");
-  setArcParameters(0,0,1);
-  delay(2000);
+  setArcParameters(PI,10,1);
+  delay(100);
   DEBUG_SERIAL.println("Position 3");
   setArcParameters((4.0*PI)/3.0,10,1);
-  delay(2000);
+  delay(100);
   DEBUG_SERIAL.println("Home");
-  setArcParameters(0,0,1);
-  delay(2000);
+  setArcParameters((5.0*PI)/3.0,10,1);
+  delay(100);
  
 }
